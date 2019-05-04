@@ -35,7 +35,7 @@ def main():
 
         with open('ap_name_port.txt', 'a+') as file:
             for k in ap_name_port:
-                file.write(f'{k} ---> {ap_name_port[k]}\n')
+                file.write(f'{k} ---> {ap_name_port[k]}\n at {device_name}')
 
         for k in ap_name_port:
             config_commands = [
@@ -43,7 +43,8 @@ def main():
                                f'int {ap_name_port[k]}',
                                f'description To-{k}',
                                f'switchport mode trunk',
-                               f'switchport trunk native vlan 107'
+                               f'switchport trunk native vlan 107',
+                               f'switchport trunk allowed vlan 107,500'
                                ]
 
             base_data, commands = data_
