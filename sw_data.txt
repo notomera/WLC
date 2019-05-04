@@ -1,0 +1,2 @@
+Device ID        Local Intrfce     Holdtme    Capability  Platform  
+APGF-07          Gig 1/0/38        144              R T   AIR-CAP16
