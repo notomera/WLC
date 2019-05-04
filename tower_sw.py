@@ -42,7 +42,6 @@ def main():
                                f'default int {ap_name_port[k]}',
                                f'int {ap_name_port[k]}',
                                f'description To-{k}',
-                               f'switchport trunk encap dot',
                                f'switchport mode trunk',
                                f'switchport trunk native vlan 107'
                                ]
