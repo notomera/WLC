@@ -49,7 +49,7 @@ def main():
 
             base_data, commands = data_
             config_object = ConnectHandler(**base_data)
-            output = config_object.send_config(config_commands)
+            output = config_object.send_config_set(config_commands)
             print(output)
 
 
