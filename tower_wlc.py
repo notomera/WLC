@@ -34,7 +34,7 @@ def main():
             row_col = row.split(' ')  # [34:62:88:e2:46:20, 58:f3:9c:bd:bf:8b, AP1F-05, 10.230.15.145, Joined]
             ap_mac_name.update({f'{row_col[8]}': f'{row_col[4]}'})
 
-        with open('ap_mac_name.txt', 'w') as file:
+        with open('ap_mac_name.txt', 'a+') as file:
             for k in ap_mac_name:
                 file.write(f'{k} > {ap_mac_name[k]}\n')
 

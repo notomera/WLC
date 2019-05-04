@@ -33,19 +33,20 @@ def main():
             row_col = row.split(' ')
             ap_name_port.update({f'{row_col[0]}': f'{row_col[10] + row_col[11]}'})
 
-        with open('ap_name_port.txt', 'w') as file:
+        with open('ap_name_port.txt', 'a+') as file:
             for k in ap_name_port:
                 file.write(f'{k} ---> {ap_name_port[k]}\n')
 
         config_commands = []
         for k in ap_name_port:
-            config_commands.append(f'default int {ap_name_port[k]}\n '
+            config_commands.append(f'config t'
+                                   f'default int {ap_name_port[k]}\n '
                                    f'int {ap_name_port[k]} \n '
                                    f'description To-{k} \n '
                                    f'switchport trunk encap dot \n '
                                    f'switchport mode trunk \n '
                                    f'switchport trunk allowed vlan 106, 107, 500'
-                                   f'exit')
+                                   f'end')
 
         configured_data = device_connection(data_[0], config_commands)
         print(configured_data)
