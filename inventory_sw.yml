@@ -27,5 +27,16 @@ devices:
     host: 172.16.42.8
   device_9:
     host: 172.16.42.9
+  device_10:
+    host: 172.16.42.21
+  device_11:
+    host: 172.16.42.22
+  device_12:
+    host: 172.16.42.23
+  device_13:
+    host: 172.16.42.24
+  device_14:
+    host: 172.16.42.25
+
 
 
