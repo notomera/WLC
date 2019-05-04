@@ -38,14 +38,14 @@ def main():
                 file.write(f'{k} ---> {ap_name_port[k]}\n')
 
         for k in ap_name_port:
-            config_commands = [f'config t ',
+            config_commands = [
                                f'default int {ap_name_port[k]}',
                                f'int {ap_name_port[k]}',
                                f'description To-{k}',
                                f'switchport trunk encap dot',
                                f'switchport mode trunk',
-                               f'switchport trunk native vlan 107',
-                               f'end']
+                               f'switchport trunk native vlan 107'
+                               ]
 
             config_object = ConnectHandler(**data_)
             output = config_object.send_config(config_commands)
