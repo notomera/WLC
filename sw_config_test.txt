@@ -1,0 +1,1 @@
+['int g0/0,description AP-1']

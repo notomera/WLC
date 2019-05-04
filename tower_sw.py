@@ -37,21 +37,18 @@ def main():
             for k in ap_name_port:
                 file.write(f'{k} ---> {ap_name_port[k]}\n')
 
-        config_commands = []
         for k in ap_name_port:
-            config_commands.append(f'config t'
-                                   f'default int {ap_name_port[k]}\n '
-                                   f'int {ap_name_port[k]} \n '
-                                   f'description To-{k} \n '
-                                   f'switchport trunk encap dot \n '
-                                   f'switchport mode trunk \n '
-                                   f'switchport trunk allowed vlan 106, 107, 500'
-                                   f'end')
+            config_commands = [f'config t ',
+                               f'default int {ap_name_port[k]}',
+                               f'int {ap_name_port[k]}',
+                               f'description To-{k}',
+                               f'switchport trunk encap dot',
+                               f'switchport mode trunk',
+                               f'switchport trunk native vlan 107',
+                               f'end']
 
-        configured_data = device_connection(data_[0], config_commands)
-        print(configured_data)
-
-
+            configured_data = device_connection(data_[0], config_commands)
+            print(configured_data)
 
 
 if __name__ == '__main__':
