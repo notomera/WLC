@@ -1,31 +1,31 @@
 base:
-    #default data
-    #for device types and the corresponding argument to be used visit the link below
-    #https://github.com/ktbyers/netmiko/blob/master/netmiko/ssh_dispatcher.py#L70
-    device_type: cisco_ios
-    username: ahmed
-    password: wadfaisal
-    #the separator between commands is ','
-    commands: show cdp neighbors | inc AIR
+  #default data
+  #for device types and the corresponding argument to be used visit the link below
+  #https://github.com/ktbyers/netmiko/blob/master/netmiko/ssh_dispatcher.py#L70
+  device_type: cisco_ios
+  username: ahmed
+  password: wadfaisal
+  #the separator between commands is ','
+  commands: show cdp neighbors | inc AIR
 devices:
-    #add data here to overwrite the default
-    device_1:
-        host: 10.100.0.100
-    device_2:
-        host: 10.100.0.101
-    device_3:
-        host: 10.100.0.100
-    device_4:
-        host: 10.100.0.101
-    device_5:
-        host: 10.100.0.100
-    device_6:
-        host: 10.100.0.101
-    device_7:
-        host: 10.100.0.100
-    device_8:
-        host: 10.100.0.101
-    device_9:
-        host: 10.100.0.100
+  #add data here to overwrite the default
+  device_1:
+    host: 172.16.42.1
+  device_2:
+    host: 172.16.42.2
+  device_3:
+    host: 172.16.42.3
+  device_4:
+    host: 172.16.42.4
+  device_5:
+    host: 172.16.42.5
+  device_6:
+    host: 172.16.42.6
+  device_7:
+    host: 172.16.42.7
+  device_8:
+    host: 172.16.42.8
+  device_9:
+    host: 172.16.42.9
 
 
