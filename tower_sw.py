@@ -47,8 +47,9 @@ def main():
                                f'switchport trunk native vlan 107',
                                f'end']
 
-            configured_data = device_connection(data_[0], config_commands)
-            print(configured_data)
+            config_object = ConnectHandler(**data_)
+            output = config_object.send_config(config_commands)
+            print(output)
 
 
 if __name__ == '__main__':
