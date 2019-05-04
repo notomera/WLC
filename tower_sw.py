@@ -38,7 +38,7 @@ def main():
                 file.write(f'{k} ---> {ap_name_port[k]} at {device_name}\n')
 
         for k in ap_name_port:
-            config_commands = {
+            config_commands = [
                 f'default int {ap_name_port[k]}',
                 f'int {ap_name_port[k]}',
                 f'description To-{k}',
@@ -46,7 +46,7 @@ def main():
                 f'switchport trunk native vlan 107',
                 f'switchport trunk allowed vlan 107,500',
                 f'do wr'
-            }
+            ]
 
             base_data, commands = data_
             config_object = ConnectHandler(**base_data)
