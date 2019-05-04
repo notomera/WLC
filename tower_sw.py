@@ -47,7 +47,8 @@ def main():
                                f'switchport trunk native vlan 107'
                                ]
 
-            config_object = ConnectHandler(*data_)
+            base_data, commands = data_
+            config_object = ConnectHandler(**base_data)
             output = config_object.send_config(config_commands)
             print(output)
 
